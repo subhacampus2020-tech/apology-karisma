@@ -1,6 +1,6 @@
-# **Interactive Apology Experience**
+# **Apology Karisma** 💖
 
-An interactive, aesthetic, and emotionally engaging **“Say Sorry” website** built with **React + Tailwind CSS**, designed to apologize in a playful yet heartfelt way.
+An interactive, aesthetic, and emotionally engaging **“Say Sorry” website for Karisma (Khushu)** built with **React + Tailwind CSS**.
 The website combines storytelling, animations, playful interactions, and a celebratory ending to turn an apology into a memorable experience.
 
 Live Demo: *(https://say-sorry-website.vercel.app/)*
