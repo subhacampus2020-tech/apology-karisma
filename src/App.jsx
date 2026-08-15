@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import FloatingElements from "./components/FloatingElements";
 import Question from "./components/Question";
 import FinalScreen from "./components/FinalScreen";
+import BackgroundMusic from "./components/BackgroundMusic";
 
 function App() {
   const [current, setCurrent] = useState(0);
@@ -19,6 +20,9 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-pink-200 via-purple-200 to-pink-300 relative overflow-hidden">
+      {/* live background music player */}
+      <BackgroundMusic />
+
       {/* live background hearts/candy/teddy */}
       <FloatingElements />
 
@@ -27,6 +31,7 @@ function App() {
       {!showQuestion && !showFinal && (
         <Frame
           image={story[current].image}
+          isVideo={story[current].isVideo}
           text={story[current].text}
           onNext={() => {
             if (current === story.length - 1) {

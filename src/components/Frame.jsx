@@ -1,4 +1,9 @@
-const Frame = ({ image, text, onNext }) => {
+const Frame = ({ image, isVideo, text, onNext }) => {
+  const isVideoContent =
+    isVideo ||
+    (typeof image === "string" &&
+      (image.endsWith(".mp4") || image.includes(".mp4")));
+
   return (
     <div className="relative flex-1 flex items-center justify-center px-10 py-16 overflow-hidden">
 
@@ -9,14 +14,26 @@ const Frame = ({ image, text, onNext }) => {
       {/* main layout */}
       <div className="relative max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 
-        {/* LEFT : IMAGE FRAME */}
+        {/* LEFT : MEDIA FRAME */}
         <div className="flex justify-center">
-          <div className="w-[440px] h-[560px] bg-white/90 backdrop-blur-xl rounded-[3rem] shadow-2xl p-6 flex items-center justify-center">
-            <img
-              src={image}
-              alt="memory"
-              className="w-full h-full object-contain rounded-[2.5rem]"
-            />
+          <div className="w-[440px] h-[560px] bg-white/90 backdrop-blur-xl rounded-[3rem] shadow-2xl p-6 flex items-center justify-center overflow-hidden">
+            {isVideoContent ? (
+              <video
+                src={image}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="w-full h-full object-cover rounded-[2.5rem]"
+              />
+            ) : (
+              <img
+                src={image}
+                alt="memory"
+                className="w-full h-full object-contain rounded-[2.5rem]"
+              />
+            )}
           </div>
         </div>
 
