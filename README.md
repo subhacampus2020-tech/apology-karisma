@@ -1,185 +1,105 @@
-# **Apology Karisma** 💖
+# **Apology Karisma** 💖✨
 
-An interactive, aesthetic, and emotionally engaging **“Say Sorry” website for Karisma (Khushu)** built with **React + Tailwind CSS**.
-The website combines storytelling, animations, playful interactions, and a celebratory ending to turn an apology into a memorable experience.
+An interactive, aesthetic, and emotionally engaging **“Say Sorry” interactive website created for Karisma (Khushu, Khushbu, Khushi maa)** built with **React + Tailwind CSS**.
 
-Live Demo: *(https://say-sorry-website.vercel.app/)*
-
-
+This application turns an apology into a memorable romantic experience combining personalized storytelling, memory photos, video playback, background romantic music, and playful interactions.
 
 ---
 
-## **Table of Contents**
+## 🌟 **Features**
 
-1. [Overview](#overview)
-2. [Features](#features)
-3. [User Flow](#user-flow)
-4. [Folder Structure](#folder-structure)
-5. [How to Run Locally](#how-to-run-locally)
-
-   * Prerequisites
-   * Installation
-   * Run Development Server
-   * Build for Production
-6. [UI & Interaction Design](#ui--interaction-design)
-7. [Animation & Effects](#animation--effects)
+* 💖 **Personalized for Karisma (Khushu)**: Tailored memory slides and Odia/Hinglish romantic messages.
+* 🎵 **Background Music Player**: Floating audio toggle playing **"Tum Ho Toh"** (Movie: *Saiyaara*) across the entire experience.
+* 🎥 **Video & Photo Slides**: Supports both high-quality photos (`Karisma-1`, `mehendi-sp`, `chudi-with-me`, `marriage-SP`, `mix-Karisma`) and looping video playback (`Happy-karisma.mp4`).
+* 🎈 **Live Animated Background**: Floating heart, candy, teddy, and sparkle emojis.
+* 😈 **Playful Runaway "No" Button**: The "No" button playfully dodges cursor/taps 5 times before disappearing, leaving only "Yes ❤️".
+* 🎉 **Celebration Ending**: Animated victory screen with celebration visuals and replay functionality.
+* 📱 **Fully Responsive**: Crafted for perfect viewing on mobile devices and desktop.
 
 ---
 
-## **Overview**
+## 📖 **User Flow**
 
-This project is a **romantic, interactive apology website** created to make saying *sorry* more personal and memorable.
-
-It:
-
-* Tells a short **story through images and messages**
-* Uses **smooth transitions & floating background animations**
-* Adds a **playful question interaction** where the “No” button runs away
-* Ends with a **celebration screen** featuring a happy image and emotional message
-
-The goal is simple:
-
-> Turn an apology into an experience 
-
----
-
-## **Features**
-
-* Aesthetic UI with soft pastel gradients
-* Story-based flow with images & messages
-* Live animated background (floating hearts, candy, teddy emojis)
-* Playful “No button runs away” interaction
-* Celebration final screen after “Yes”
-* Replay option to restart the experience
-* Fully responsive (desktop & mobile)
-* Built with modern React + Vite
+1. **Header & Navbar**: Personalized brand for `Karisma 💗` with love subtext.
+2. **Story Cards**:
+   * **Slide 1**: Intro message with `Karisma-1.jpeg`.
+   * **Slide 2**: Mehendi memory card with hidden 'S'.
+   * **Slide 3**: Red Bangles romantic card (`chudi-with-me.jpeg`).
+   * **Slide 4**: Video playback card playing `Happy-karisma.mp4`.
+   * **Slide 5**: Marriage memory card (`marriage-SP.jpeg`).
+   * **Slide 6**: Commitment & US photo (`mix-Karisma.jpeg`).
+3. **Interactive Apology Question**:
+   * *"Abe twww PLEASE Au Ragani na PLEASEEEEE!, Mo Khushi maa? 🥺"*
+4. **"No" Button Logic**: Moves randomly on click/hover for 5 attempts, then gracefully vanishes.
+5. **"Yes" Celebration Screen**:
+   * *"Mujhe pata tha tum zyada der naraz nahi reh sakti, Karisma! 💖"*
+   * *"Ab bas smiles hi smiles, Mo Khushbu 🎉❤️"*
 
 ---
 
-## **User Flow**
-
-1. Landing with a **cute navbar**
-2. Story frames:
-
-   * Image on the left
-   * Message + “Next” button on the right
-3. Interactive question:
-
-   > *“Kya tum ab bhi naraz ho?”*
-4. “No” button:
-
-   * Initially appears normally
-   * Disappears and reappears randomly on click
-   * Permanently disappears after 5 clicks
-5. “Yes” click:
-
-   * Soft transition
-   * Celebration image
-   * Final emotional message
-   * Replay button
-
----
-
-## **Folder Structure**
+## 📂 **Project Structure**
 
 ```
-say-sorry-website/
+apology-karisma/
+│
+├── public/
+│   ├── song.mp3               # "Tum Ho Toh" (Saiyaara) background audio
+│   └── vite.svg
 │
 ├── src/
 │   ├── assets/
-│   │   └── images/          # Story images + celebration image
+│   │   └── images/            # Photos & Happy-karisma.mp4 video file
 │   │
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Frame.jsx
-│   │   ├── Question.jsx
-│   │   ├── FinalScreen.jsx
-│   │   └── FloatingElements.jsx
+│   │   ├── Navbar.jsx          # Header navigation
+│   │   ├── Frame.jsx           # Photo/Video memory card player
+│   │   ├── BackgroundMusic.jsx # Floating music toggle player
+│   │   ├── Question.jsx        # Interactive runaway No button card
+│   │   ├── FinalScreen.jsx     # Celebration & replay screen
+│   │   └── FloatingElements.jsx # Animated floating emojis
 │   │
 │   ├── data/
-│   │   └── story.js         # Story content & images
+│   │   └── story.js            # Story data, texts & media imports
 │   │
-│   ├── App.jsx
+│   ├── App.jsx                 # Main application layout
 │   ├── main.jsx
-│   └── index.css
+│   └── index.css               # Tailwind & floating keyframe animations
 │
-├── public/
 ├── index.html
 ├── package.json
-├── tailwind.config.js
 └── README.md
 ```
 
 ---
 
-## **How to Run Locally**
+## 🚀 **How to Run Locally**
 
-### **Prerequisites**
-
+### **1. Prerequisites**
 * Node.js ≥ 18
-* npm / yarn
+* npm
 
----
-
-### **Installation**
-
+### **2. Installation**
 ```bash
-git clone https://github.com/your-username/romantic-sorry-website.git
-cd romantic-sorry-website
+git clone https://github.com/subhacampus2020-tech/Interactive-apology-website.git
+cd Interactive-apology-website
 npm install
 ```
 
----
-
-### **Run Development Server**
-
+### **3. Start Development Server**
 ```bash
 npm run dev
 ```
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-App runs at:
-
-```
-http://localhost:5173
-```
-
----
-
-### **Build for Production**
-
+### **4. Build for Production**
 ```bash
 npm run build
-npm run preview
 ```
 
 ---
 
-## **UI & Interaction Design**
+## 🎨 **Design System & Aesthetics**
 
-### Layout
-
-* Left: framed image card
-* Right: message card with CTA
-* Balanced visual weight to avoid empty feel
-
-### Design Principles
-
-* Soft colors
-* Rounded corners
-* Glassmorphism cards
-* Clear emotional hierarchy
-
----
-
-## **Animation & Effects**
-
-| Effect              | Description                                      |
-| ------------------- | ------------------------------------------------ |
-| Floating Background | Hearts, candies, teddy emojis float continuously |
-| Button Hover        | Smooth scale & glow                              |
-| No Button Logic     | Disappears & reappears at random positions       |
-| Transitions         | Soft fade & scale transitions between screens    |
-
-All animations are **CSS-based**, lightweight, and performant.
-
----
+* **Color Palette**: Apple-inspired pastel gradients (`from-pink-200 via-purple-200 to-pink-300`).
+* **Card Design**: Soft glassmorphism (`backdrop-blur-xl bg-white/90`) with smooth rounded corners (`rounded-[3rem]`).
+* **Typography**: Clean modern typography with playful emoji micro-interactions.
