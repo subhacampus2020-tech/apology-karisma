@@ -80,8 +80,8 @@ apology-karisma/
 
 ### **2. Installation**
 ```bash
-git clone https://github.com/subhacampus2020-tech/Interactive-apology-website.git
-cd Interactive-apology-website
+git clone https://github.com/subhacampus2020-tech/apology-karisma.git
+cd apology-karisma
 npm install
 ```
 
