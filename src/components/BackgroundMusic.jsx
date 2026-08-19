@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import songMusic from "../assets/song.mp3";
 
-const BackgroundMusic = ({ musicSrc = "/song.mp3" }) => {
+const BackgroundMusic = ({ musicSrc = songMusic }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -18,7 +19,7 @@ const BackgroundMusic = ({ musicSrc = "/song.mp3" }) => {
   };
 
   useEffect(() => {
-    // Attempt auto-play on first click anywhere on page (browser policy compliance)
+    // Attempt auto-play on first click/touch/keydown anywhere on page
     const handleFirstInteraction = () => {
       if (audioRef.current && audioRef.current.paused) {
         audioRef.current
@@ -28,14 +29,17 @@ const BackgroundMusic = ({ musicSrc = "/song.mp3" }) => {
       }
       window.removeEventListener("click", handleFirstInteraction);
       window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
     };
 
     window.addEventListener("click", handleFirstInteraction);
     window.addEventListener("touchstart", handleFirstInteraction);
+    window.addEventListener("keydown", handleFirstInteraction);
 
     return () => {
       window.removeEventListener("click", handleFirstInteraction);
       window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
     };
   }, []);
 
