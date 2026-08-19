@@ -19,36 +19,37 @@ const BackgroundMusic = ({ musicSrc = songMusic }) => {
   };
 
   useEffect(() => {
-    // Attempt auto-play on first click/touch/keydown anywhere on page
-    const handleFirstInteraction = () => {
+    const playAudio = () => {
       if (audioRef.current && audioRef.current.paused) {
         audioRef.current
           .play()
           .then(() => setIsPlaying(true))
           .catch(() => {});
       }
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
-      window.removeEventListener("keydown", handleFirstInteraction);
     };
 
-    window.addEventListener("click", handleFirstInteraction);
-    window.addEventListener("touchstart", handleFirstInteraction);
-    window.addEventListener("keydown", handleFirstInteraction);
+    // Immediate attempt on mount
+    playAudio();
+
+    // Unlock on any touch/scroll/click event on mobile & desktop
+    const events = ["click", "touchstart", "touchend", "pointerdown", "scroll", "keydown"];
+    const handleUserInteraction = () => {
+      playAudio();
+    };
+
+    events.forEach((evt) => window.addEventListener(evt, handleUserInteraction, { passive: true }));
 
     return () => {
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
-      window.removeEventListener("keydown", handleFirstInteraction);
+      events.forEach((evt) => window.removeEventListener(evt, handleUserInteraction));
     };
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <audio ref={audioRef} src={musicSrc} loop preload="auto" />
       <button
         onClick={togglePlay}
-        className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold shadow-xl transition-all duration-300 border border-white/50 ${
+        className={`flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold shadow-xl transition-all duration-300 border border-white/50 ${
           isPlaying
             ? "bg-gradient-to-r from-rose-500 to-pink-500 text-white animate-pulse"
             : "bg-white/90 backdrop-blur-md text-gray-700 hover:bg-white hover:scale-105"

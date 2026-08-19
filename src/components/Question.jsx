@@ -97,22 +97,22 @@ const Question = ({ onYes }) => {
   };
 
   return (
-    <div className="flex-1 flex items-center justify-center relative px-10 py-20">
+    <div className="flex-1 flex items-center justify-center relative px-4 sm:px-10 py-10 sm:py-20">
 
       {/* Question Card */}
-      <div className="relative bg-white/90 backdrop-blur-xl rounded-[3rem] p-14 shadow-2xl text-center max-w-xl w-full">
+      <div className="relative bg-white/90 backdrop-blur-xl rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 md:p-14 shadow-2xl text-center max-w-xl w-full">
 
-        <h2 className="text-4xl font-semibold text-gray-700 mb-14">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-semibold text-gray-700 mb-8 sm:mb-14 leading-relaxed">
           Abe twww PLEASE Au Ragani na PLEASEEEEE!!!!!!!!!, Mo Khushi maa? 🥺 Please katha hua mo saha na abe tw thare katha hua
         </h2>
 
         {/* Button Area */}
-        <div className="relative h-40 flex items-center justify-center gap-10">
+        <div className="relative min-h-[120px] sm:h-40 flex items-center justify-center gap-6 sm:gap-10">
 
           {/* YES BUTTON (stable) */}
           <button
             onClick={onYes}
-            className="px-12 py-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-full text-2xl font-medium shadow-lg hover:scale-105 transition-all duration-300 z-10"
+            className="px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-full text-xl sm:text-2xl font-medium shadow-lg hover:scale-105 transition-all duration-300 z-10"
           >
             Yes ❤️
           </button>
@@ -121,7 +121,7 @@ const Question = ({ onYes }) => {
           {noClicks === 0 && (
             <button
               onClick={handleNoClick}
-              className="px-12 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-2xl font-medium shadow-lg transition-all duration-300"
+              className="px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-xl sm:text-2xl font-medium shadow-lg transition-all duration-300"
             >
               No 😤
             </button>
@@ -137,7 +137,7 @@ const Question = ({ onYes }) => {
                 left: pos.left,
                 transform: "translate(-50%, -50%)",
               }}
-              className="px-12 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-2xl font-medium shadow-lg transition-all duration-300"
+              className="px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full text-xl sm:text-2xl font-medium shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               No 😤
             </button>
@@ -146,7 +146,7 @@ const Question = ({ onYes }) => {
 
         {/* Cute message after No disappears */}
         {noClicks >= 5 && (
-          <p className="mt-10 text-lg text-gray-500 italic">
+          <p className="mt-6 sm:mt-10 text-base sm:text-lg text-gray-500 italic">
             Ab to sirf ek hi jawab bachta hai, MY Khushu… 😌💖
           </p>
         )}
