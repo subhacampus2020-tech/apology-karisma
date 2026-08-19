@@ -21,7 +21,7 @@ export const story = [
   },
   {
     image: chudiWithMe, 
-    text: "See how much I love you... Red Bangles only for you! ❤️✨😍",
+    text: "See, Shubhasis Nija thu b Bhala pae tamaku... Red Bangles only for you! ❤️✨😍",
   },
   {
     image: happyKarismaVideo,

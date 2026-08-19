@@ -33,6 +33,8 @@ function App() {
           image={story[current].image}
           isVideo={story[current].isVideo}
           text={story[current].text}
+          currentStep={current + 1}
+          totalSteps={story.length}
           onNext={() => {
             if (current === story.length - 1) {
               setShowQuestion(true);
