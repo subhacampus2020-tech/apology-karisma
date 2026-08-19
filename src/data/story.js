@@ -13,7 +13,7 @@ import img5 from "../assets/images/img5.jpg";
 export const story = [
   {
     image: karisma1,
-    text: "Hiiii Khushu, Just wanted to tell you somethingggg!!!",
+    text: "Mo Khushu, Just wanted to tell you somethingggg!!!",
   },
   {
     image: mehendiSp,
