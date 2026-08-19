@@ -19,14 +19,17 @@ const Frame = ({ image, isVideo, text, onNext }) => {
           <div className="w-[440px] h-[560px] bg-white/90 backdrop-blur-xl rounded-[3rem] shadow-2xl p-6 flex items-center justify-center overflow-hidden">
             {isVideoContent ? (
               <video
-                src={image}
                 autoPlay
                 loop
                 muted
                 playsInline
                 controls
+                preload="auto"
                 className="w-full h-full object-cover rounded-[2.5rem]"
-              />
+              >
+                <source src={image} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             ) : (
               <img
                 src={image}
