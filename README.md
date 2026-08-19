@@ -32,8 +32,8 @@ This application turns an apology into a memorable romantic experience combining
    * *"Abe twww PLEASE Au Ragani na PLEASEEEEE!, Mo Khushi maa? 🥺"*
 4. **"No" Button Logic**: Moves randomly on click/hover for 5 attempts, then gracefully vanishes.
 5. **"Yes" Celebration Screen**:
-   * *"Mujhe pata tha tum zyada der naraz nahi reh sakti, Karisma! 💖"*
-   * *"Ab bas smiles hi smiles, Mo Khushbu 🎉❤️"*
+   * *"Mu bhbabithili bahut dina jae ragiki rahiparibani, But rahigala, Karisma! 💖"*
+   * *"Abe tw thare hasa na, Mo Khushbu 🎉❤️"*
 
 ---
 
